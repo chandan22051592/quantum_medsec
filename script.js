@@ -1,120 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quantum Secure Patient Data</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <h2>Quantum Secure Patient Data</h2>
-
-  <form id="patientForm">
-    <label>Name:</label>
-    <input type="text" id="name" required>
-
-    <label>Age:</label>
-    <input type="number" id="age" min="0" required>
-
-    <label>Diagnosis:</label>
-    <input type="text" id="diagnosis" required>
-
-    <label>Prescription:</label>
-    <textarea id="prescription" rows="2" required></textarea>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <pre id="output">Enter details and click "Submit"...</pre>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Quantum Secure Patient Data</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    h2 { margin-bottom: 20px; text-align: center; }
-    form {
-      background: white;
-      padding: 25px 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      font-size: 16px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    button:hover { background-color: #0056cc; }
-    pre {
-      margin-top: 25px;
-      background: #fff;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 800px;
-      white-space: pre-wrap;
-    }
-  </style>
-</head>
-<body>
-
-<h2>Quantum Secure Patient Data</h2>
-
-<form id="patientForm">
-  <label>Name:</label>
-  <input type="text" id="name" required>
-
-  <label>Age:</label>
-  <input type="number" id="age" min="0" required>
-
-  <label>Diagnosis:</label>
-  <input type="text" id="diagnosis" required>
-
-  <label>Prescription:</label>
-  <textarea id="prescription" rows="2" required></textarea>
-
-  <button type="submit">Submit</button>
-</form>
-
-<pre id="output">Enter details and click "Submit"...</pre>
-
-<script>
 function qkd_generate_key() {
   const array = new Uint8Array(32);
   window.crypto.getRandomValues(array);
@@ -156,7 +39,6 @@ function quantum_authenticate() {
 document.getElementById("patientForm").addEventListener("submit", async function(event) {
   event.preventDefault();
 
-  // === Validation ===
   const name = document.getElementById("name").value.trim();
   const age = document.getElementById("age").value.trim();
   const diagnosis = document.getElementById("diagnosis").value.trim();
@@ -200,14 +82,10 @@ document.getElementById("patientForm").addEventListener("submit", async function
   log.push("[QSA] Token valid: " + valid);
 
   if (valid) {
-    log.push("[System] ✅ Secure process completed successfully.");
+    log.push("[System] Secure process completed successfully.");
   } else {
-    log.push("[System] ❌ Authentication failed. Data not stored.");
+    log.push("[System] Authentication failed. Data not stored.");
   }
 
   document.getElementById("output").innerText = log.join('\n');
 });
-</script>
-
-</body>
-</html> -->
